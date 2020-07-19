@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:3001/api/transaction';
+const API_URL = 'https://ric-controle-financeiro.herokuapp.com/api/transaction';
 
 const getAllTransactions = async (period) => {
   const res = await axios.get(`${API_URL}?period=${period}`);
