@@ -4,6 +4,7 @@ import Spinner from './components/Spinner.js';
 import TransactionsControl from './components/TransactionsControl.js';
 import ModalTransaction from './components/ModalTransaction.js';
 import { periods, currentPeriod } from './helpers/period.js';
+import { formatNumber } from './helpers/formatHelper.js';
 
 export default function App() {
   const [allTransactions, setAllTransactions] = useState([]);
@@ -176,22 +177,22 @@ export default function App() {
         <span>
           <strong>
             Receitas:
-            <span style={{ color: 'rgb(22, 160, 133)' }}> {receitas}</span>
+            <span style={{ color: 'rgb(22, 160, 133)' }}> {formatNumber(receitas)}</span>
           </strong>
         </span>
         <span>
           <strong>
             Despesas:
-            <span style={{ color: 'rgb(192, 57, 43)' }}> -{despesas}</span>
+            <span style={{ color: 'rgb(192, 57, 43)' }}> -{formatNumber(despesas)}</span>
           </strong>
         </span>
         <span>
           <strong>
             Saldo:
             {saldo >= 0 ? (
-              <span style={{ color: 'rgb(22, 160, 133)' }}> {saldo}</span>
+              <span style={{ color: 'rgb(22, 160, 133)' }}> {formatNumber(saldo)}</span>
             ) : (
-              <span style={{ color: 'rgb(192, 57, 43)' }}> {saldo}</span>
+              <span style={{ color: 'rgb(192, 57, 43)' }}> {formatNumber(saldo)}</span>
             )}
           </strong>
         </span>

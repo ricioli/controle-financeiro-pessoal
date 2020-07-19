@@ -1,5 +1,6 @@
 import React from 'react';
 import Action from './Action.js';
+import { formatNumber } from '../helpers/formatHelper.js';
 
 const TransactionsControll = ({ transactions, onDelete, onPersist }) => {
   const handleActionClick = (transaction, type) => {
@@ -65,7 +66,7 @@ const TransactionsControll = ({ transactions, onDelete, onPersist }) => {
                 <span style={{ fontSize: '1.1rem' }}>{description}</span>
               </div>
               <span style={{ textAlign: 'right', fontFamily: 'Consolas, monospace', fontSize: '1.8rem' }}>
-                {value}
+                {formatNumber(value)}
               </span>
             </div>
             <div
